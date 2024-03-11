@@ -1,0 +1,24 @@
+version: '2'
+
+networks:
+  ssh-net:
+    driver: bridge
+
+services:
+  ssh-server:
+    # image: 'linuxkit/sshd:75f399fbfb6455dfccd4cb30543d0b4b494d28c8-amd64'
+    platform: "linux/x86_64"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - ssh-net
+    ports:
+      - '22:22'
+    # volumes:
+    #   - "~/work/ssh-test/ssh_keys:/etc/ssh/"
+    # environment:
+  # myapp:
+  #   image: 'YOUR_APPLICATION_IMAGE'
+  #   networks:
+  #     - ssh-net
