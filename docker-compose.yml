@@ -11,6 +11,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # environment:
+    #   - BLAH; pw_val
     networks:
       - ssh-net
     ports:
