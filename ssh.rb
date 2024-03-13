@@ -17,7 +17,7 @@ options = {
 Net::SSH.start('ssh-server', 'opf_ssh_user', options) do |ssh|
   puts ssh.exec!('pwd')
   # ssh.exec!('cd .ssh')
-  puts ssh.exec!(['cd .ssh', ' pwd'])
+  puts ssh.exec!('cd .ssh && pwd')
   output = ssh.exec!('ls -la')
   puts output
   puts 'YEAH!!!!!+======================='
